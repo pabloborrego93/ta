@@ -24,9 +24,10 @@ spec:
       cpu: 1000m
   podTemplateSpec:
     securityContext: {}
-    containers:
-      - name: cassandra
-        securityContext: {}
+    spec:
+      containers:
+        - name: cassandra
+          securityContext: {}
   racks:
     - name: rack1
   config:

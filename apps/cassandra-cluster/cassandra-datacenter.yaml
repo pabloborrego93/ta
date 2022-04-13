@@ -37,4 +37,4 @@ spec:
       resources:
         requests:
           storage: 1Gi
-      storageClassName: dc-storage
+      storageClassName: default

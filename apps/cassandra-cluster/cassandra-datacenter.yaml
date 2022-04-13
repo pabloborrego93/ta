@@ -11,8 +11,8 @@ spec:
       num_tokens: 16
       role_manager: CassandraRoleManager
     jvm-server-options:
-      initial_heap_size: 128Mi
-      max_heap_size: 256Mi
+      initial_heap_size: 128M
+      max_heap_size: 256M
   dockerImageRunsAsCassandra: false
   managementApiAuth:
     insecure: {}

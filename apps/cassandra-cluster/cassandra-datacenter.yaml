@@ -4,37 +4,37 @@ metadata:
   name: dc1
 spec:
   clusterName: development
-  config:
-    cassandra-yaml:
-      authenticator: PasswordAuthenticator
-      authorizer: CassandraAuthorizer
-      num_tokens: 16
-      role_manager: CassandraRoleManager
-    jvm-server-options:
-      initial_heap_size: 1G
-      max_heap_size: 1G
-  dockerImageRunsAsCassandra: false
+  serverType: cassandra
+  serverVersion: "4.0.1"
   managementApiAuth:
     insecure: {}
+  size: 1
+  storageConfig:
+      cassandraDataVolumeClaimSpec:
+        storageClassName: default
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi
+  dockerImageRunsAsCassandra: false
+  resources:
+    requests:
+      memory: 2Gi
+      cpu: 1000m
   podTemplateSpec:
+    securityContext: {}
     containers:
       - name: cassandra
         securityContext: {}
-    securityContext: {}
   racks:
     - name: rack1
-  resources:
-    requests:
-      cpu: 1000m
-      memory: 2Gi
-  serverType: cassandra
-  serverVersion: 4.0.1
-  size: 3
-  storageConfig:
-    cassandraDataVolumeClaimSpec:
-      accessModes:
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: 10Gi
-      storageClassName: default
+  config:
+    jvm-server-options:
+      initial_heap_size: "1G"
+      max_heap_size: "1G"
+    cassandra-yaml:
+      num_tokens: 16
+      authenticator: PasswordAuthenticator
+      authorizer: CassandraAuthorizer
+      role_manager: CassandraRoleManager

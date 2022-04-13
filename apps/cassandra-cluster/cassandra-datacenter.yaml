@@ -36,5 +36,5 @@ spec:
         - ReadWriteOnce
       resources:
         requests:
-          storage: 10Gi
-      storageClassName: server-storage
+          storage: 1Gi
+      storageClassName: dc-storage

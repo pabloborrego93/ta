@@ -1,0 +1,40 @@
+apiVersion: cassandra.datastax.com/v1beta1
+kind: CassandraDatacenter
+metadata:
+  name: dcta
+spec:
+  clusterName: ta
+  config:
+    cassandra-yaml:
+      authenticator: PasswordAuthenticator
+      authorizer: CassandraAuthorizer
+      num_tokens: 16
+      role_manager: CassandraRoleManager
+    jvm-server-options:
+      initial_heap_size: 128Mi
+      max_heap_size: 256Mi
+  dockerImageRunsAsCassandra: false
+  managementApiAuth:
+    insecure: {}
+  podTemplateSpec:
+    containers:
+      - name: cassandra
+        securityContext: {}
+    securityContext: {}
+  racks:
+    - name: rack1
+  resources:
+    requests:
+      cpu: 1000m
+      memory: 256Mi
+  serverType: cassandra
+  serverVersion: 4.0.1
+  size: 1
+  storageConfig:
+    cassandraDataVolumeClaimSpec:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 10Gi
+      storageClassName: server-storage

@@ -7,3 +7,4 @@ resources:
   - dev-ta-kubemq-cluster.yaml
   - dev-ta-bf-candle-reader.yaml
   - dev-ta-candle-store.yaml
+  - dev-ta-dc.yaml

@@ -37,4 +37,4 @@ spec:
       resources:
         requests:
           storage: 1Gi
-      storageClassName: default
+      storageClassName: kops-ssd-1-17

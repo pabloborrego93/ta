@@ -11,7 +11,7 @@ spec:
   size: 1
   storageConfig:
       cassandraDataVolumeClaimSpec:
-        storageClassName: default
+        storageClassName: kops-ssd-1-17
         accessModes:
           - ReadWriteOnce
         resources:

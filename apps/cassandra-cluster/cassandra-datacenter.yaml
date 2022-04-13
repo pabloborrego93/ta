@@ -1,9 +1,9 @@
 apiVersion: cassandra.datastax.com/v1beta1
 kind: CassandraDatacenter
 metadata:
-  name: dcta
+  name: dc1
 spec:
-  clusterName: ta
+  clusterName: development
   config:
     cassandra-yaml:
       authenticator: PasswordAuthenticator
@@ -11,8 +11,8 @@ spec:
       num_tokens: 16
       role_manager: CassandraRoleManager
     jvm-server-options:
-      initial_heap_size: 128M
-      max_heap_size: 256M
+      initial_heap_size: 1G
+      max_heap_size: 1G
   dockerImageRunsAsCassandra: false
   managementApiAuth:
     insecure: {}
@@ -26,15 +26,15 @@ spec:
   resources:
     requests:
       cpu: 1000m
-      memory: 256Mi
+      memory: 2Gi
   serverType: cassandra
   serverVersion: 4.0.1
-  size: 1
+  size: 3
   storageConfig:
     cassandraDataVolumeClaimSpec:
       accessModes:
         - ReadWriteOnce
       resources:
         requests:
-          storage: 1Gi
-      storageClassName: kops-ssd-1-17
+          storage: 10Gi
+      storageClassName: default

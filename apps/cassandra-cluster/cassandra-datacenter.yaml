@@ -11,12 +11,12 @@ spec:
   size: 1
   storageConfig:
       cassandraDataVolumeClaimSpec:
-        storageClassName: gp2
+        storageClassName: dc-storage
         accessModes:
           - ReadWriteOnce
         resources:
           requests:
-            storage: 2Gi
+            storage: 5Gi
   dockerImageRunsAsCassandra: false
   resources:
     requests:

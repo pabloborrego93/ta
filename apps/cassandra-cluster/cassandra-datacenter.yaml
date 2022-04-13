@@ -11,7 +11,7 @@ spec:
   size: 1
   storageConfig:
       cassandraDataVolumeClaimSpec:
-        storageClassName: dc-storage
+        storageClassName: kops-csi-1-21
         accessModes:
           - ReadWriteOnce
         resources:

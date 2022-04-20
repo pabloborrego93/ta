@@ -22,6 +22,10 @@ k8ssandra:
       - name: default
   kube-prometheus-stack:
     enabled: false
+    prometheus:
+      enabled: false
+    grafana:
+      enabled: false
   stargate:
     enabled: true
     replicas: 1

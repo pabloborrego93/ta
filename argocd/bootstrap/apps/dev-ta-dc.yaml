@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ta-dev-cassandra-datacenter
+  name: ta-cassandra-datacenter
   namespace: argocd
 spec:
   destination:
-    namespace: dev
+    namespace: cassandra
     server: https://kubernetes.default.svc
   project: ta
   source:

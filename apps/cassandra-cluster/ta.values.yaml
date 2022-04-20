@@ -21,9 +21,7 @@ k8ssandra:
       racks:
       - name: default
   kube-prometheus-stack:
-    grafana:
-      adminUser: admin
-      adminPassword: admin123
+    enabled: false
   stargate:
     enabled: true
     replicas: 1

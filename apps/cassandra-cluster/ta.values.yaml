@@ -20,8 +20,14 @@ k8ssandra:
       size: 1
       racks:
       - name: default
+  reaper-operator:
+    enabled: false
+  cass-operator:
+    enabled: false
   kube-prometheus-stack:
     enabled: false
+    prometheusOperator:
+      enabled: false
     prometheus:
       enabled: false
     grafana:

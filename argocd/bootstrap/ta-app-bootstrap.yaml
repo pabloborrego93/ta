@@ -11,6 +11,6 @@ spec:
   source:
     path: argocd/bootstrap
     repoURL: https://github.com/dbgjerez/ta.git
-    targetRevision: HEAD
+    targetRevision: feature/cassandra
   syncPolicy:
     automated: {}

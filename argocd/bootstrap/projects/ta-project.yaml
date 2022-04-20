@@ -12,6 +12,8 @@ spec:
     server: 'https://kubernetes.default.svc'
   - namespace: 'dev'
     server: 'https://kubernetes.default.svc'
+  - namespace: 'cassandra'
+    server: 'https://kubernetes.default.svc'
   sourceRepos:
   - 'ta'
   - 'https://github.com/dbgjerez/ta.git'
